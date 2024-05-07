@@ -9,16 +9,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <div>
-      <div
-        style={{
-          display: "flex",
-          gap: "22px",
-          maxWidth: "900px",
-          flexWrap: "wrap",
-          padding: "20px",
-        }}
-      >
+    <div className="container mx-auto">
+      <div className="grid grid-cols-3">
         <UserCard
           age={23}
           userName="Himanshu Bari"

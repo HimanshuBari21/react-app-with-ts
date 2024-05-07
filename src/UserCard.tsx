@@ -1,5 +1,4 @@
 import { FC, HTMLAttributes } from "react";
-import "./UserCard.css";
 import clsx from "clsx";
 
 // type for UserCardProps
@@ -33,29 +32,30 @@ const UserCard: FC<UserCardProps> = (props) => {
   return (
     // all the props that are not destructured will be attributes of this div
     <div
-      className={clsx("card-wrapper", withHoverEffect && "hover-effect")}
+      className={clsx(
+        "p-6",
+        withHoverEffect && "hover:scale-105 transition-all delay-300"
+      )}
       {...rest}
     >
-      <div className="user-wrapper">
-        <div className="user-img">
-          <img src={image.src} alt={image.alt} />
+      <div className="border p-6">
+        <div className="flex gap-6">
+          <div className="w-1/3">
+            <img src={image.src} alt={image.alt} className="rounded-full" />
+          </div>
+          <div>
+            <h2 className="font-bold text-3xl">{userName}</h2>
+            <p>Age: {age}</p>
+            <p>Gender: {gender}</p>
+          </div>
         </div>
-        <div>
-          <h2>{userName}</h2>
-          <p>Age: {age}</p>
-          <p>Gender: {gender}</p>
-        </div>
+        {teamMembers?.length && (
+          <div className="mt-5">
+            <p className="font-bold">Team Members</p>
+            <ul>{teamMembers.join(", ")}</ul>
+          </div>
+        )}
       </div>
-      {teamMembers?.length && (
-        <div>
-          <p>Team Members</p>
-          <ul>
-            {teamMembers?.map((member, i) => {
-              return <li key={i}>{member}</li>;
-            })}
-          </ul>
-        </div>
-      )}
     </div>
   );
 };
