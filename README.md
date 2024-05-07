@@ -1,6 +1,37 @@
-# Getting Started with Create React App
+# Getting Started with Create React App with TypeScript
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+To create a New React app with TypeScript
+
+### `npx create-react-app my-app --template typescript`
+
+in command above my-app can be replaced by your project name
+
+the above command will create a react app with TypeScript configured for you - please check `tsconfig.json` file
+
+for more details : https://create-react-app.dev/docs/adding-typescript/
+
+## Specific to this Repo
+
+This repo has a very basic card component for Explaning TS with React component, that is `UserCard`
+
+If you check the UserCard.tsx file there you will find a type is created called UserCardProps that defined the types of props that can be passed to the component.
+
+Please also check comments in same file
+
+### Lets understand each props of the component care fully
+
+\* means mandatory props
+
+- userName\*: string
+- age\*: number
+- teamMember: array of strings
+- gender\*: "Male" | "Female" | "LGBTQA+" (predined format also called unions in ts)
+- image\*: an Object with properties - alt: string and src: string
+- withHoverEffect: this is a boolean value, but you dont need to pass any boolean value specificly, as if ignored this props it will be undefined (falsly) and if you pass this props it will be true.
+
+that's it for a Basic TS component, please feel free to ping me for any assitance
+
+Himanshu Bari
 
 ## Available Scripts
 

@@ -1,15 +1,77 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import UserCard from "./UserCard";
+import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <div>
+      <div
+        style={{
+          display: "flex",
+          gap: "22px",
+          maxWidth: "900px",
+          flexWrap: "wrap",
+          padding: "20px",
+        }}
+      >
+        <UserCard
+          age={23}
+          userName="Himanshu Bari"
+          gender="Male"
+          teamMembers={["Rahul", "Deepali", "Aditya"]}
+          image={{
+            alt: "Himanshu",
+            src: "https://picsum.photos/id/1/200",
+          }}
+          withHoverEffect
+        />
+        <UserCard
+          age={23}
+          userName="Rahul Sharma"
+          gender="Male"
+          teamMembers={["Rahul", "Deepali", "Aditya"]}
+          image={{
+            alt: "Himanshu",
+            src: "https://picsum.photos/id/3/200",
+          }}
+        />
+        <UserCard
+          age={23}
+          userName="Virj Kumar"
+          gender="Male"
+          teamMembers={["Rahul", "Deepali", "Aditya"]}
+          image={{
+            alt: "Himanshu",
+            src: "https://picsum.photos/id/4/200",
+          }}
+        />
+        <UserCard
+          age={23}
+          userName="Deepali Kahye"
+          gender="Female"
+          teamMembers={["Rahul", "Deepali", "Aditya"]}
+          image={{
+            alt: "Himanshu",
+            src: "https://picsum.photos/id/5/200",
+          }}
+        />
+        <UserCard
+          age={23}
+          userName="Harish Iyer"
+          gender="LGBTQA+"
+          teamMembers={["Rahul", "Deepali", "Aditya"]}
+          image={{
+            alt: "Himanshu",
+            src: "https://picsum.photos/id/6/200",
+          }}
+        />
+      </div>
+    </div>
   </React.StrictMode>
 );
 
